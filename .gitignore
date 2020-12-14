@@ -1,0 +1,10 @@
+/target/
+.directory
+/nbproject/
+nbactions.xml
+nb-configuration.xml
+.idea
+*iml
+*ipr
+*iws
+
