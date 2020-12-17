@@ -20,6 +20,7 @@ package dev.thefoggiest.calcusaurus.util;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -28,10 +29,12 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class NumberUtil
 {
+    private static final ResourceBundle bundle = ResourceBundle.getBundle("Bundle");
+    
     public static int getInt(String s)
     {
         if (s.isBlank()) {
-            throw new IllegalArgumentException("Invoer mag niet leeg zijn");
+            throw new IllegalArgumentException(bundle.getString("INVOER MAG NIET LEEG ZIJN"));
         }
         return Integer.parseInt(s.strip());
     }
@@ -47,12 +50,12 @@ public class NumberUtil
     {
         if (min == 0) 
         {
-            throw new IllegalArgumentException("Delen door nul kan niet");
+            throw new IllegalArgumentException(bundle.getString("DELEN DOOR NUL KAN NIET"));
         }
         
         if (min > max) 
         {
-            throw new IllegalArgumentException("Min kan niet hoger zijn dan max");
+            throw new IllegalArgumentException(bundle.getString("MIN KAN NIET HOGER ZIJN DAN MAX"));
         }
         
         final ThreadLocalRandom random = ThreadLocalRandom.current();
@@ -85,7 +88,7 @@ public class NumberUtil
         }
         else if (min > max) 
         {
-            throw new IllegalArgumentException("Min kan niet hoger zijn dan max");
+            throw new IllegalArgumentException(bundle.getString("MIN KAN NIET HOGER ZIJN DAN MAX"));
         }
 
         final ThreadLocalRandom random = ThreadLocalRandom.current();

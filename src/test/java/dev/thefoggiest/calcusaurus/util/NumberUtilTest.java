@@ -17,7 +17,6 @@
  */
 package dev.thefoggiest.calcusaurus.util;
 
-import dev.thefoggiest.calcusaurus.util.NumberUtil;
 import java.util.Arrays;
 import static org.junit.Assert.*;
 

@@ -17,12 +17,16 @@
  */
 package dev.thefoggiest.calcusaurus.model;
 
+import java.util.ResourceBundle;
+
 /**
  *
 * @author Mister Wrong <hello@thefoggiest.dev>
  */
 public abstract class SimpleAssignment implements Assignment {
-    
+
+    private static final ResourceBundle bundle = ResourceBundle.getBundle("Bundle");
+
     private int firstNumber;
     private int secondNumber;
     private int solution;
@@ -81,7 +85,7 @@ public abstract class SimpleAssignment implements Assignment {
         }
         if (!(other instanceof SimpleAssignment)) 
         {
-            throw new IllegalArgumentException("Kan alleen dezelfde soort oefeningen vergelijken");
+            throw new IllegalArgumentException(bundle.getString("ONLY LIKE EXERCICES"));
         }
         var otherAssignment = (SimpleAssignment)other;
         return this.firstNumber == otherAssignment.getFirstNumber() 
