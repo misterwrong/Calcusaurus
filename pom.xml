@@ -61,7 +61,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>dev.thefoggiest.calcusaurus.Application.java</mainClass>
+                            <mainClass>dev.thefoggiest.calcusaurus.Application</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
