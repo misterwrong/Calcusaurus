@@ -28,11 +28,11 @@ import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JTextField;
 import dev.thefoggiest.calcusaurus.model.Assignment;
 import dev.thefoggiest.calcusaurus.service.ExerciseService;
 import dev.thefoggiest.calcusaurus.util.NumberUtil;
+import java.util.ResourceBundle;
 
 /**
  *
@@ -40,6 +40,8 @@ import dev.thefoggiest.calcusaurus.util.NumberUtil;
  */
 public final class CalcusaurusFrame extends javax.swing.JFrame
 {
+    private static final ResourceBundle bundle = ResourceBundle.getBundle("Bundle");
+    
     private int score;
 
     private final DinoPanel dinoPanel;
@@ -189,10 +191,11 @@ public final class CalcusaurusFrame extends javax.swing.JFrame
     {
         String text;
         if (score == numberOfAssignments) {
-            text = "Super! Je had ALLES goed!";
+            text = bundle.getString("SUPER! JE HAD ALLES GOED!");
         }
         else {
-            text = "Klaar! Je had " + score + " van de " + numberOfAssignments + " goed!";
+            text = java.text.MessageFormat.format(bundle
+                    .getString("KLAAR! JE HAD {0} VAN DE {1} GOED!"), new Object[] {score, numberOfAssignments});
         }
         var scorePanel = new ScorePanel(text,
             (var again) ->
@@ -212,7 +215,7 @@ public final class CalcusaurusFrame extends javax.swing.JFrame
     private void showAnswerCorrect()
     {
         // TODO: Vary congratulations
-        var correctPanel = new TextPanel_SW("Helemaal goed!", (var e) ->
+        var correctPanel = new TextPanel_SW(bundle.getString("HELEMAAL GOED!"), (var e) ->
         {
             dinoPanel.removeBubble();
             exerciseSemaphore.release();
@@ -223,7 +226,8 @@ public final class CalcusaurusFrame extends javax.swing.JFrame
 
     private void showAnswerWrong(final Assignment assignment)
     {
-        var correctPanel = new TextPanel_NW("Nee, helaas: " + assignment, (var e) ->
+        var correctPanel = new TextPanel_NW(java.text.MessageFormat.format(bundle
+                .getString("NEE, HELAAS: {0}"), new Object[] {assignment}), (var e) ->
         {
             dinoPanel.removeBubble();
             exerciseSemaphore.release();
@@ -241,7 +245,7 @@ public final class CalcusaurusFrame extends javax.swing.JFrame
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Calcusaurus");
+        setTitle(bundle.getString("CALCUSAURUS")); // NOI18N
         setBackground(getBackground());
         setResizable(false);
 

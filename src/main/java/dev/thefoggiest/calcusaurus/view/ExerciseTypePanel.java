@@ -101,15 +101,16 @@ public class ExerciseTypePanel extends javax.swing.JPanel
         negativeCheckBox = new javax.swing.JCheckBox();
         readyButton = new javax.swing.JButton();
 
-        jLabel1.setText("Hoeveel vragen wil je?");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("Bundle"); // NOI18N
+        jLabel1.setText(bundle.getString("HOEVEEL VRAGEN WIL JE?")); // NOI18N
 
-        jLabel2.setText("Hoogste getal?");
+        jLabel2.setText(bundle.getString("HOOGSTE GETAL?")); // NOI18N
 
-        zeroCheckBox.setText("Nul (0)?");
+        zeroCheckBox.setText(bundle.getString("NUL (0)?")); // NOI18N
 
-        negativeCheckBox.setText("Getallen onder de nul?");
+        negativeCheckBox.setText(bundle.getString("GETALLEN ONDER DE NUL?")); // NOI18N
 
-        readyButton.setText("Klaar!");
+        readyButton.setText(bundle.getString("KLAAR!")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

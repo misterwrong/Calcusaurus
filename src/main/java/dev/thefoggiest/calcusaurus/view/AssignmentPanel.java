@@ -21,6 +21,7 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import dev.thefoggiest.calcusaurus.model.Assignment;
 import dev.thefoggiest.calcusaurus.util.RequestFocusListener;
+import java.util.ResourceBundle;
 
 /**
  *
@@ -28,6 +29,8 @@ import dev.thefoggiest.calcusaurus.util.RequestFocusListener;
  */
 public final class AssignmentPanel extends javax.swing.JPanel
 {
+
+    private static final ResourceBundle bundle = ResourceBundle.getBundle("Bundle");
     /**
      * Creates new form AssignmentPanel
      *
@@ -40,7 +43,7 @@ public final class AssignmentPanel extends javax.swing.JPanel
     {
         initComponents();
         this.setBackground(new Color(0, 0, 0, 0));
-        label.setText("Wat is " + assignment.getAssignment() + "?");
+        label.setText(java.text.MessageFormat.format(bundle.getString("WAT IS {0}?"), new Object[] {assignment.getAssignment()}));
         responseTextField.addActionListener(actionListener);        
         responseTextField.addAncestorListener(new RequestFocusListener());
     }
@@ -63,7 +66,7 @@ public final class AssignmentPanel extends javax.swing.JPanel
 
         label.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label.setText("Wat is");
+        label.setText(bundle.getString("WAT IS")); // NOI18N
 
         responseTextField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
