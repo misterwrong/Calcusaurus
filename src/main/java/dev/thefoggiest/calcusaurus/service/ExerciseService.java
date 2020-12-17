@@ -77,7 +77,7 @@ public class ExerciseService
     {
         if (negative && !zero)
         {
-            throw new IllegalArgumentException("Cannot use negative numbers without zero");
+            throw new IllegalArgumentException("Voor negatieve getalllen is nul ook nodig");
         }
 
         int max = highest.max;

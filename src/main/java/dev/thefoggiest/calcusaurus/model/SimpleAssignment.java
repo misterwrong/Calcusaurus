@@ -81,7 +81,7 @@ public abstract class SimpleAssignment implements Assignment {
         }
         if (!(other instanceof SimpleAssignment)) 
         {
-            throw new IllegalArgumentException("Can only compare like assignments");
+            throw new IllegalArgumentException("Kan alleen dezelfde soort oefeningen vergelijken");
         }
         var otherAssignment = (SimpleAssignment)other;
         return this.firstNumber == otherAssignment.getFirstNumber() 
