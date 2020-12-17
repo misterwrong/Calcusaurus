@@ -17,7 +17,6 @@
  */
 package dev.thefoggiest.calcusaurus.service;
 
-import dev.thefoggiest.calcusaurus.service.AdditionService;
 import dev.thefoggiest.calcusaurus.model.SimpleAssignment;
 import static org.junit.jupiter.api.Assertions.*;
 
