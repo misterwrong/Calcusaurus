@@ -33,10 +33,10 @@ import javax.swing.JPanel;
  */
 public final class BubblePanel extends JPanel
 {
-    public static String BUBBLE_IMAGE_SE = "src/main/resources/image/bubble-se.png";
-    public static String BUBBLE_IMAGE_SW = "src/main/resources/image/bubble-sw.png";
-    public static String BUBBLE_IMAGE_NE = "src/main/resources/image/bubble-ne.png";
-    public static String BUBBLE_IMAGE_NW = "src/main/resources/image/bubble-nw.png";
+    public static String BUBBLE_IMAGE_SE = "/dev/thefoggiest/calcusaurus/view/bubble-se.png";
+    public static String BUBBLE_IMAGE_SW = "/dev/thefoggiest/calcusaurus/view/bubble-sw.png";
+    public static String BUBBLE_IMAGE_NE = "/dev/thefoggiest/calcusaurus/view/bubble-ne.png";
+    public static String BUBBLE_IMAGE_NW = "/dev/thefoggiest/calcusaurus/view/bubble-nw.png";
 
     public static Dimension BUBBLE_SIZE = new Dimension(300, 269);
     public static Color TRANSPARENT_BACKGROUND = new Color(0, 0, 0, 0);
@@ -55,7 +55,7 @@ public final class BubblePanel extends JPanel
         this.setBackground(TRANSPARENT_BACKGROUND);
         try
         {
-            bubble = ImageIO.read(new File(direction));
+            bubble = ImageIO.read(getClass().getResource(direction));
         } catch (IOException ex)
         {
             System.out.println(ex.getMessage());

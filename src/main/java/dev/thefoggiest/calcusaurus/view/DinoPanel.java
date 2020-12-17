@@ -21,7 +21,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Insets;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -43,7 +42,7 @@ public class DinoPanel extends JPanel
         initComponents();
         try
         {
-            image = ImageIO.read(new File("src/main/resources/image/dinos.jpg"));
+            image = ImageIO.read(getClass().getResource("/dev/thefoggiest/calcusaurus/view/dinos.jpg"));
         } catch (IOException ex)
         {
             System.out.println(ex.getMessage());
