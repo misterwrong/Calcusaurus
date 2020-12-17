@@ -18,6 +18,7 @@
 package dev.thefoggiest.calcusaurus;
 
 import dev.thefoggiest.calcusaurus.view.CalcusaurusFrame;
+import java.util.Locale;
 
 /**
  *

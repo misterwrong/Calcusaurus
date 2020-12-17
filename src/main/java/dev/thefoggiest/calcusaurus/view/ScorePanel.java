@@ -18,6 +18,7 @@
 package dev.thefoggiest.calcusaurus.view;
 
 import java.awt.event.ActionListener;
+import java.util.ResourceBundle;
 
 /**
  *
@@ -25,6 +26,7 @@ import java.awt.event.ActionListener;
  */
 public final class ScorePanel extends javax.swing.JPanel
 {
+    private static final ResourceBundle bundle = ResourceBundle.getBundle("Bundle");
     /**
      * Creates new form ScorePanel
      * @param text
@@ -51,11 +53,11 @@ public final class ScorePanel extends javax.swing.JPanel
         againButton = new javax.swing.JButton();
         stopButton = new javax.swing.JButton();
 
-        label.setText("Klaar!");
+        label.setText(bundle.getString("AF"));
 
-        againButton.setText("Nog eens");
+        againButton.setText(bundle.getString("NOG EENS"));
 
-        stopButton.setText("Stoppen");
+        stopButton.setText(bundle.getString("STOPPEN"));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

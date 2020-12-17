@@ -29,6 +29,7 @@ import dev.thefoggiest.calcusaurus.model.SimpleDivisionAssignment;
 import dev.thefoggiest.calcusaurus.model.SimpleMultiplicationAssignment;
 import dev.thefoggiest.calcusaurus.model.SimpleSubstractionAssignment;
 import dev.thefoggiest.calcusaurus.util.RequestFocusListener;
+import java.util.ResourceBundle;
 
 /**
  *
@@ -36,6 +37,8 @@ import dev.thefoggiest.calcusaurus.util.RequestFocusListener;
  */
 public class SelectionPanel extends JPanel
 {
+    private static final ResourceBundle bundle = ResourceBundle.getBundle("Bundle");
+    
     private final List<JCheckBox> checkboxes;
 
     /**
@@ -103,12 +106,12 @@ public class SelectionPanel extends JPanel
         setOpaque(false);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Wat wil je doen?");
+        jLabel1.setText(bundle.getString("WAT WIL JE DOEN?"));
 
-        additionCheckBox.setText("Optellen");        
-        substractionCheckBox.setText("Aftrekken");       
-        multiplicationCheckBox.setText("Vermenigvuldigen");
-        divisionCheckBox.setText("Delen");
+        additionCheckBox.setText(bundle.getString("OPTELLEN"));        
+        substractionCheckBox.setText(bundle.getString("AFTREKKEN"));       
+        multiplicationCheckBox.setText(bundle.getString("VERMENIGVULDIGEN"));
+        divisionCheckBox.setText(bundle.getString("DELEN"));
         
         okButton.setText("Ok");
 

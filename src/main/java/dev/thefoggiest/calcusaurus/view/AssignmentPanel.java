@@ -29,7 +29,6 @@ import java.util.ResourceBundle;
  */
 public final class AssignmentPanel extends javax.swing.JPanel
 {
-
     private static final ResourceBundle bundle = ResourceBundle.getBundle("Bundle");
     /**
      * Creates new form AssignmentPanel
@@ -42,6 +41,7 @@ public final class AssignmentPanel extends javax.swing.JPanel
     public AssignmentPanel(final Assignment assignment, ActionListener actionListener)
     {
         initComponents();
+        
         this.setBackground(new Color(0, 0, 0, 0));
         label.setText(java.text.MessageFormat.format(bundle.getString("WAT IS {0}?"), new Object[] {assignment.getAssignment()}));
         responseTextField.addActionListener(actionListener);        
