@@ -16,9 +16,5 @@ anything else. You just tell it what kind of exercises you want and there you go
 Have fun!
 
 TODO:
-* Input fields and buttons always get focus
-* Ask for how many assignments 
-* Internationalize (All texts are in Dutch)
-* Ask for 0, < 0, > 10, > 100
-* More assignments type
-
+* Involve all dinos in the picture
+* More assignment types
